@@ -1,4 +1,4 @@
-let express = require('express');
+import * as express from 'express';
 let app = express();
 console.log("Hello World");
 
@@ -43,4 +43,4 @@ app.get("/", (req, res) => {
 
 
 
- module.exports = app;
+ export default app;
