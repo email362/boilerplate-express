@@ -11,7 +11,10 @@ app.get("/", (req, res) => {
   res.sendFile(htmlFile);
 });
 
-
+app.get("/json", (req, res) => {
+  const returnObj = { "message": "Hello json" };
+  res.json(returnObj);
+});
 
 
 
