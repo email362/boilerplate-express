@@ -7,6 +7,14 @@ const publicPath = __dirname + '/public';
 
 app.use('/public',express.static(publicPath));
 
+app.use('/json', (req, res, next) => {
+  const httpMethod = req.method;
+  const relativePath = req.path;
+  const ipAddr = req.ip;
+  console.log(`${httpMethod} ${relativePath} - ${ipAddr}`);
+  next();
+});
+
 app.get("/json", (req, res) => {
   const isUpper = process.env.MESSAGE_STYLE === "uppercase";
   let returnObj = { "message": "Hello json" };
