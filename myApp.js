@@ -7,7 +7,7 @@ const publicPath = __dirname + '/public';
 
 app.use('/public',express.static(publicPath));
 
-app.use('/json', (req, res, next) => {
+app.use( (req, res, next) => {
   const httpMethod = req.method;
   const relativePath = req.path;
   const ipAddr = req.ip;
