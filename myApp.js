@@ -23,6 +23,13 @@ app.get('/:word/echo', (req, res) => {
   res.json({echo: word});
 })
 
+app.post('/name', (req, res) => {
+  const {first, last} = req.body;
+  res.json({
+    name: `${first} ${last}`
+  });
+});
+
 app.get('/name', (req, res) => {
   const {first,last} = req.query;
   res.json({
